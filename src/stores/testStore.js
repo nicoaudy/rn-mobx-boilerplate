@@ -1,13 +1,20 @@
-import { decorate, observable } from "mobx";
+import { decorate, observable, action } from "mobx";
 
 import remotedev from "mobx-remotedev";
+import { NavigationService } from "../services/NavigationService";
 
 class TestStore {
-  message = "Welcome from Mobx";
+  message = "";
+
+  init() {
+    this.message = "Welcome from mobx";
+    NavigationService.navigate("LOGIN");
+  }
 }
 
 decorate(TestStore, {
-  message: observable
+  message: observable,
+  init: action
 });
 
 export default remotedev((TestStore = new TestStore()), { remote: true });

@@ -1,8 +1,10 @@
+import React from "react";
 import {
   createBottomTabNavigator,
   createStackNavigator,
   createSwitchNavigator
 } from "react-navigation";
+import { NavigationService } from "../services/NavigationService";
 
 import SplashScreen from "../screens/splash";
 import LoginScreen from "../screens/auth/login";
@@ -52,4 +54,12 @@ const AppNavigation = createSwitchNavigator({
   BottomTab
 });
 
-export default AppNavigation;
+class Navigator extends React.Component {
+  render() {
+    return (
+      <AppNavigation ref={r => NavigationService.setTopLevelNavigator(r)} />
+    );
+  }
+}
+
+export default Navigator;
