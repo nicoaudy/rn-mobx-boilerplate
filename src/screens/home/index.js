@@ -1,12 +1,4 @@
-import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { inject, observer } from "mobx-react";
+import Home from "./home";
 
-export default class Home extends Component {
-  render() {
-    return (
-      <View>
-        <Text> Home </Text>
-      </View>
-    );
-  }
-}
+export default inject("testStore")(observer(Home));
