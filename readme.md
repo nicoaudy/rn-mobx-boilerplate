@@ -8,10 +8,9 @@ Instead of repeating my self setup react native project from ground up, at the e
 - react navigation
 - mobx
 - mobx react
-- @babel decorator
   
 
 ### Screenshot
 ---
 
-![Screenshot](https://raw.githubusercontent.com/nicoaudy/rn-mobx-boilerplate/master/src/assets/screenshot/splash.png)
+![Screenshot](https://raw.githubusercontent.com/nicoaudy/rn-mobx/master/src/assets/screenshot/splash.png)
