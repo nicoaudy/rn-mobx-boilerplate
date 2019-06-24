@@ -23,7 +23,10 @@ const AuthStack = createStackNavigator(
     }
   },
   {
-    initialRouteName: "SPLASH"
+    initialRouteName: "SPLASH",
+    navigationOptions: {
+      header: null
+    }
   }
 );
 
