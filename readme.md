@@ -26,6 +26,8 @@ react-native-rename "Dating App" -b com.yourname.appname
 - [mobx react](https://github.com/mobxjs/mobx-react)
 - [mobx remotedev](https://github.com/zalmoxisus/mobx-remotedev)
 - [react-native-rename](https://github.com/junedomingo/react-native-rename)
+- [formik](https://jaredpalmer.com/formik/docs/overview)
+- [yup](https://github.com/jquense/yup)
 
 ### Screenshot
 ---
