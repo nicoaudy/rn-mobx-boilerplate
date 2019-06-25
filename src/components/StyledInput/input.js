@@ -6,7 +6,6 @@ const StyledInput = ({ label, formikProps, formikKey, ...rest }) => {
   const inputStyle = {
     borderWidth: 1,
     borderColor: "black",
-    padding: 10,
     marginBottom: 3
   };
 

@@ -1,5 +1,13 @@
 import React, { Component, Fragment } from "react";
-import { View, ActivityIndicator, Button } from "react-native";
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  Button,
+  Image,
+  StatusBar
+} from "react-native";
+import styles from "./style";
 
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -22,7 +30,13 @@ export default class Login extends Component {
     });
 
     return (
-      <View>
+      <View style={styles.container}>
+        <View style={styles.logoWrapper}>
+          <StatusBar barStyle="light-content" />
+          <Image style={styles.logo} source={require("assets/logo.png")} />
+          <Text style={styles.text}>💰</Text>
+        </View>
+
         <Formik
           initialValues={{ name: "", password: "" }}
           onSubmit={(values, actions) => {
