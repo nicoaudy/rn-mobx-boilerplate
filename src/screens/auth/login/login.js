@@ -44,6 +44,8 @@ export default class Login extends Component {
             setTimeout(() => {
               actions.setSubmitting(false);
             }, 1000);
+
+            this.props.navigation.navigate("HOME");
           }}
           validationSchema={validationSchema}
         >
