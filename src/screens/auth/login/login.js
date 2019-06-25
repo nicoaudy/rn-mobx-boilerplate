@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { View, TextInput, Text, ActivityIndicator, Button } from "react-native";
+import { View, ActivityIndicator, Button } from "react-native";
 
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -54,7 +54,11 @@ export default class Login extends Component {
               {formik.isSubmitting ? (
                 <ActivityIndicator />
               ) : (
-                <Button title="Submit" onPress={formik.handleSubmit} />
+                <Button
+                  title="Submit"
+                  onPress={formik.handleSubmit}
+                  style={{ padding: 20 }}
+                />
               )}
             </Fragment>
           )}
