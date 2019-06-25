@@ -45,8 +45,12 @@ const SettingStack = createStackNavigator({
 });
 
 const BottomTab = createBottomTabNavigator({
-  HomeStack,
-  SettingStack
+  HOME: {
+    screen: HomeStack
+  },
+  SETTING: {
+    screen: SettingStack
+  }
 });
 
 const AppNavigation = createSwitchNavigator({

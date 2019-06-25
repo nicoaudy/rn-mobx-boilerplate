@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Text, View } from "react-native";
 
 export default class Home extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
+  static navigationOptions = {
+    title: "Home"
+  };
 
   render() {
     return (
