@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+
+import Header from "components/Header";
 
 export default class Home extends Component {
   static navigationOptions = {
-    title: "Home"
+    header: null
   };
 
   render() {
-    return (
-      <View>
-        <Text>{this.props.testStore.message}</Text>
-      </View>
-    );
+    return <Header title={this.props.testStore.message} />;
   }
 }

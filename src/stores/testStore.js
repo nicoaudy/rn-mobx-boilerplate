@@ -4,10 +4,9 @@ import remotedev from "mobx-remotedev";
 import { NavigationService } from "../services/NavigationService";
 
 class TestStore {
-  message = "";
+  message = "Hello World";
 
   init() {
-    this.message = "Welcome from mobx";
     NavigationService.navigate("LOGIN");
   }
 }

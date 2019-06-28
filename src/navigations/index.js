@@ -53,10 +53,15 @@ const BottomTab = createBottomTabNavigator({
   }
 });
 
-const AppNavigation = createSwitchNavigator({
-  AuthStack,
-  BottomTab
-});
+const AppNavigation = createSwitchNavigator(
+  {
+    AuthStack,
+    BottomTab
+  },
+  {
+    initialRouteName: "BottomTab"
+  }
+);
 
 class Navigator extends React.Component {
   render() {
