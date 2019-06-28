@@ -5,7 +5,7 @@ import {
   createSwitchNavigator
 } from "react-navigation";
 import { NavigationService } from "../services/NavigationService";
-import { Icon, Text } from "native-base";
+import { Icon } from "native-base";
 
 import themes from "utils/theme";
 
@@ -14,6 +14,7 @@ import LoginScreen from "../screens/auth/login";
 import RegisterScreen from "../screens/auth/register";
 import HomeScreen from "../screens/home";
 import SettingScreen from "../screens/setting";
+import ProfileScreen from "../screens/profile";
 
 const AuthStack = createStackNavigator(
   {
@@ -44,6 +45,9 @@ const HomeStack = createStackNavigator({
 const SettingStack = createStackNavigator({
   SETTING: {
     screen: SettingScreen
+  },
+  PROFILE: {
+    screen: ProfileScreen
   }
 });
 

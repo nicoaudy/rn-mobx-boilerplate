@@ -21,7 +21,7 @@ const StyledHeader = ({
   rightLabel
 }) => {
   return (
-    <Header>
+    <Header style={{ marginBottom: 10 }}>
       {backBotton ? (
         <Left>
           <Button transparent onPress={backAction}>
