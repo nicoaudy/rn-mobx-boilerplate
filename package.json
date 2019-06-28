@@ -11,6 +11,7 @@
     "mobx": "^5.10.1",
     "mobx-react": "^6.1.1",
     "mobx-remotedev": "^0.3.6",
+    "native-base": "^2.12.1",
     "react": "16.8.3",
     "react-native": "0.59.9",
     "react-navigation": "^2.18.3",

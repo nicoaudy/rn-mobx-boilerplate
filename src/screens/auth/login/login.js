@@ -1,18 +1,12 @@
 import React, { Component, Fragment } from "react";
-import {
-  View,
-  Text,
-  ActivityIndicator,
-  Button,
-  Image,
-  StatusBar
-} from "react-native";
+import { View, Text, ActivityIndicator, Image, StatusBar } from "react-native";
 import styles from "./style";
 
 import { Formik } from "formik";
 import * as yup from "yup";
 
 import StyledInput from "components/StyledInput";
+import Button from "components/Button";
 
 export default class Login extends Component {
   render() {
@@ -41,6 +35,7 @@ export default class Login extends Component {
           initialValues={{ name: "", password: "" }}
           onSubmit={(values, actions) => {
             alert(JSON.stringify(values));
+
             setTimeout(() => {
               actions.setSubmitting(false);
             }, 1000);
@@ -67,15 +62,11 @@ export default class Login extends Component {
                 secureTextEntry
               />
 
-              {formik.isSubmitting ? (
-                <ActivityIndicator />
-              ) : (
-                <Button
-                  title="Submit"
-                  onPress={formik.handleSubmit}
-                  style={{ padding: 20 }}
-                />
-              )}
+              <Button
+                title="Submit"
+                onPress={formik.handleSubmit}
+                disabled={formik.isSubmitting ? true : false}
+              />
             </Fragment>
           )}
         </Formik>

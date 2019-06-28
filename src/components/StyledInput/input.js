@@ -1,28 +1,30 @@
 import React from "react";
 
 import { View, Text, TextInput } from "react-native";
+import theme from "utils/theme";
+import styles from "./styles";
 
 const StyledInput = ({ label, formikProps, formikKey, ...rest }) => {
   const inputStyle = {
-    borderWidth: 1,
-    borderColor: "black",
-    marginBottom: 3
+    borderBottomColor: theme.color.COLOR_PRIMARY
   };
 
   if (formikProps.touched[formikKey] && formikProps.errors[formikKey]) {
-    inputStyle.borderColor = "red";
+    inputStyle.borderBottomColor = theme.color.COLOR_DANGER;
   }
 
   return (
-    <View style={{ marginHorizontal: 20, marginVertical: 5 }}>
-      <Text style={{ marginBottom: 3 }}>{label}</Text>
+    <View style={styles.formGroup}>
+      <Text style={styles.label}>{label}</Text>
       <TextInput
-        style={inputStyle}
+        placeholder={label}
+        placeholderTextColor={theme.color.COLOR_PLACEHOLDER}
+        style={[styles.formInput, inputStyle]}
         onChangeText={formikProps.handleChange(formikKey)}
         onBlur={formikProps.handleBlur(formikKey)}
         {...rest}
       />
-      <Text style={{ color: "red" }}>
+      <Text style={{ color: theme.color.COLOR_DANGER }}>
         {formikProps.touched[formikKey] && formikProps.errors[formikKey]}
       </Text>
     </View>
