@@ -37,3 +37,6 @@ react-native-rename "Dating App" -b com.yourname.appname
 ![Screenshot](https://raw.githubusercontent.com/nicoaudy/rn-mobx-boilerplate/master/src/assets/screenshot/login.png)
 ![Screenshot](https://raw.githubusercontent.com/nicoaudy/rn-mobx-boilerplate/master/src/assets/screenshot/validation.png)
 ![Screenshot](https://raw.githubusercontent.com/nicoaudy/rn-mobx-boilerplate/master/src/assets/screenshot/home.png)
+![Screenshot](https://raw.githubusercontent.com/nicoaudy/rn-mobx-boilerplate/master/src/assets/screenshot/setting.png)
+![Screenshot](https://raw.githubusercontent.com/nicoaudy/rn-mobx-boilerplate/master/src/assets/screenshot/profile.png)
+![Screenshot](https://raw.githubusercontent.com/nicoaudy/rn-mobx-boilerplate/master/src/assets/screenshot/confirm.png)
