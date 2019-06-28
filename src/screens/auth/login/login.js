@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
-import { View, Text, ActivityIndicator, Image, StatusBar } from "react-native";
+import { View, Text, Image, StatusBar } from "react-native";
 import styles from "./style";
 
 import { Formik } from "formik";
 import * as yup from "yup";
 
-import StyledInput from "components/StyledInput";
+import Input from "components/Input";
 import Button from "components/Button";
 
 export default class Login extends Component {
@@ -46,7 +46,7 @@ export default class Login extends Component {
         >
           {formik => (
             <Fragment>
-              <StyledInput
+              <Input
                 label="Email"
                 formikProps={formik}
                 formikKey="email"
@@ -54,7 +54,7 @@ export default class Login extends Component {
                 autofocus
               />
 
-              <StyledInput
+              <Input
                 label="Password"
                 formikProps={formik}
                 formikKey="password"
