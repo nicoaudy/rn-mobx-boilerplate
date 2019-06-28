@@ -5,6 +5,9 @@ import {
   createSwitchNavigator
 } from "react-navigation";
 import { NavigationService } from "../services/NavigationService";
+import { Icon, Text } from "native-base";
+
+import themes from "utils/theme";
 
 import SplashScreen from "../screens/splash";
 import LoginScreen from "../screens/auth/login";
@@ -44,14 +47,37 @@ const SettingStack = createStackNavigator({
   }
 });
 
-const BottomTab = createBottomTabNavigator({
-  HOME: {
-    screen: HomeStack
+const BottomTab = createBottomTabNavigator(
+  {
+    HOME: {
+      screen: HomeStack,
+      navigationOptions: {
+        tabBarLabel: "Home",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-home" size={24} style={{ color: tintColor }} />
+        )
+      }
+    },
+    SETTING: {
+      screen: SettingStack,
+      navigationOptions: {
+        tabBarLabel: "Setting",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-settings" size={24} style={{ color: tintColor }} />
+        )
+      }
+    }
   },
-  SETTING: {
-    screen: SettingStack
+  {
+    tabBarOptions: {
+      activeTintColor: themes.color.COLOR_WHITE,
+      inactiveTintColor: themes.color.COLOR_GREY,
+      style: {
+        backgroundColor: themes.color.COLOR_PRIMARY
+      }
+    }
   }
-});
+);
 
 const AppNavigation = createSwitchNavigator(
   {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Content, Text, StyleProvider } from "native-base";
+import { StyleProvider } from "native-base";
 
 import Navigation from "./src/navigations";
 import { Provider } from "mobx-react";
