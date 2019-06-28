@@ -8,6 +8,10 @@ export default class Home extends Component {
   };
 
   render() {
-    return <Header title={this.props.testStore.message} />;
+    return (
+      <>
+        <Header title={this.props.testStore.message} />
+      </>
+    );
   }
 }

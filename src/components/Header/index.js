@@ -21,10 +21,7 @@ const StyledHeader = ({
   rightLabel
 }) => {
   return (
-    <Header
-      style={{ backgroundColor: "#4F455E" }}
-      androidStatusBarColor="#4F455E"
-    >
+    <Header>
       {backBotton ? (
         <Left>
           <Button transparent onPress={backAction}>
