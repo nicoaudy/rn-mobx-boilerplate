@@ -1,6 +1,6 @@
 import { decorate, observable, action } from "mobx";
 
-import remotedev from "mobx-remotedev";
+import remotedev from "mobx-remotedev/lib/dev";
 import { NavigationService } from "../services/NavigationService";
 
 class TestStore {
@@ -16,4 +16,4 @@ decorate(TestStore, {
   init: action
 });
 
-export default remotedev((TestStore = new TestStore()), { remote: true });
+export default remotedev((TestStore = new TestStore()), { global: true });
