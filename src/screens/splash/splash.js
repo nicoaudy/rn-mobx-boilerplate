@@ -24,7 +24,7 @@ export default class SplashScreen extends Component {
     }).start();
 
     setTimeout(() => {
-      this.props.testStore.init();
+      this.props.authStore.setupAuth();
     }, 5000);
   }
 

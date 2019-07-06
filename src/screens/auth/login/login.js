@@ -40,7 +40,7 @@ export default class Login extends Component {
               actions.setSubmitting(false);
             }, 1000);
 
-            this.props.navigation.navigate("HOME");
+            this.props.authStore.login(values.email, values.password);
           }}
           validationSchema={validationSchema}
         >

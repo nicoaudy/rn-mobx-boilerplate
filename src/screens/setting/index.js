@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Container, Content, Button, Text } from "native-base";
 
-import Header from "components/Header";
+import Toolbar from "components/Toolbar";
 
 export default class Setting extends Component {
   static navigationOptions = {
@@ -12,7 +12,7 @@ export default class Setting extends Component {
   render() {
     return (
       <Container>
-        <Header title="Settings" />
+        <Toolbar title="Settings" />
 
         <Content style={{ padding: 10 }}>
           <Button

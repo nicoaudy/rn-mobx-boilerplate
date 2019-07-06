@@ -12,16 +12,18 @@ import {
   Text
 } from "native-base";
 
-const StyledHeader = ({
+const Toolbar = ({
   title,
   backBotton,
   backAction,
   rightBotton,
   rightAction,
-  rightLabel
+  rightLabel,
+  rightWithIcon,
+  rightIcon
 }) => {
   return (
-    <Header style={{ marginBottom: 10 }}>
+    <Header>
       {backBotton ? (
         <Left>
           <Button transparent onPress={backAction}>
@@ -38,9 +40,15 @@ const StyledHeader = ({
 
       {rightBotton ? (
         <Right>
-          <Button hasText transparent onPress={rightAction}>
-            <Text>{rightLabel}</Text>
-          </Button>
+          {rightWithIcon ? (
+            <Button transparent onPress={rightAction}>
+              <Icon name={rightIcon} />
+            </Button>
+          ) : (
+            <Button hasText transparent onPress={rightAction}>
+              <Text>{rightLabel}</Text>
+            </Button>
+          )}
         </Right>
       ) : (
         <Right />
@@ -49,13 +57,15 @@ const StyledHeader = ({
   );
 };
 
-StyledHeader.propTypes = {
+Toolbar.propTypes = {
   title: PropTypes.string.isRequired,
   backBotton: PropTypes.bool,
   backAction: PropTypes.func,
   rightBotton: PropTypes.bool,
   rightAction: PropTypes.func,
+  rightWithIcon: PropTypes.bool,
+  rightIcon: PropTypes.string,
   rightLabel: PropTypes.string
 };
 
-export default StyledHeader;
+export default Toolbar;

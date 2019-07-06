@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Alert } from "react-native";
 
-import Header from "components/Header";
+import Toolbar from "components/Toolbar";
 
 export default class Profile extends Component {
   static navigationOptions = {
@@ -27,7 +27,7 @@ export default class Profile extends Component {
   render() {
     return (
       <>
-        <Header
+        <Toolbar
           title="Profile"
           backBotton={true}
           backAction={() => this.props.navigation.goBack()}
