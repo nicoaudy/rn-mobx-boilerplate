@@ -5,7 +5,6 @@ import {
   createSwitchNavigator
 } from "react-navigation";
 import { NavigationService } from "../services/NavigationService";
-import { Icon } from "native-base";
 
 import themes from "utils/theme";
 
@@ -56,19 +55,13 @@ const BottomTab = createBottomTabNavigator(
     HOME: {
       screen: HomeStack,
       navigationOptions: {
-        tabBarLabel: "Home",
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name="ios-home" size={24} style={{ color: tintColor }} />
-        )
+        tabBarLabel: "Home"
       }
     },
     SETTING: {
       screen: SettingStack,
       navigationOptions: {
-        tabBarLabel: "Setting",
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name="ios-settings" size={24} style={{ color: tintColor }} />
-        )
+        tabBarLabel: "Setting"
       }
     }
   },
