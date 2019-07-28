@@ -9,4 +9,8 @@ const Profile = () => {
   );
 };
 
+Profile.navigationOptions = {
+  title: "Profile"
+};
+
 export default Profile;

@@ -9,4 +9,8 @@ const Setting = () => {
   );
 };
 
+Setting.navigationOptions = {
+  title: "Setting"
+};
+
 export default Setting;
