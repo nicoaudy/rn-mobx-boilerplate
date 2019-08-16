@@ -1,12 +1,8 @@
-import React, { Fragment } from "react";
-import { View, Text, Image, StatusBar } from "react-native";
-import styles from "./style";
+import React from "react";
+import { Block, Form, TextInput, Button } from "cidro";
 
 import { Formik } from "formik";
 import * as yup from "yup";
-
-import Input from "components/Input";
-import Button from "components/Button";
 
 const Login = props => {
   const validationSchema = yup.object().shape({
@@ -23,53 +19,67 @@ const Login = props => {
   });
 
   return (
-    <View style={styles.container}>
-      <View style={styles.logoWrapper}>
-        <StatusBar barStyle="light-content" />
-        <Image style={styles.logo} source={require("assets/logo.png")} />
-        <Text style={styles.text}>💰</Text>
-      </View>
-
+    <Block flex safe>
       <Formik
         initialValues={{ name: "", password: "" }}
         onSubmit={(values, actions) => {
           alert(JSON.stringify(values));
 
           setTimeout(() => {
+            actions.setSubmitting(true);
+            props.authStore.login(values.email, values.password);
             actions.setSubmitting(false);
-          }, 1000);
-
-          props.authStore.login(values.email, values.password);
+          }, 2000);
         }}
         validationSchema={validationSchema}
       >
         {formik => (
-          <Fragment>
-            <Input
+          <Form
+            title="Your App"
+            subtitle="Please inform your email and password to logged in"
+          >
+            <TextInput
               label="Email"
-              formikProps={formik}
-              formikKey="email"
-              placeholder="John@doe.com"
-              autofocus
+              value={formik.values["email"]}
+              onChangeText={formik.handleChange("email")}
+              onBlur={formik.handleBlur("email")}
+              type={
+                formik.touched["email"] && formik.errors["email"]
+                  ? "error"
+                  : "success"
+              }
+              message={formik.touched["email"] && formik.errors["email"]}
+              placeholder="Email address"
+              keyboardType="email-address"
             />
 
-            <Input
+            <TextInput
               label="Password"
-              formikProps={formik}
-              formikKey="password"
-              placeholder="password"
+              value={formik.values["password"]}
+              onChangeText={formik.handleChange("password")}
+              onBlur={formik.handleBlur("password")}
+              type={
+                formik.touched["password"] && formik.errors["password"]
+                  ? "error"
+                  : "success"
+              }
+              message={formik.touched["password"] && formik.errors["password"]}
+              placeholder="Password"
               secureTextEntry
             />
 
             <Button
-              title="Submit"
+              text="LOGIN"
+              size={10}
+              type="primary"
               onPress={formik.handleSubmit}
+              loading={formik.isSubmitting ? true : false}
               disabled={formik.isSubmitting ? true : false}
             />
-          </Fragment>
+          </Form>
         )}
       </Formik>
-    </View>
+    </Block>
   );
 };
 

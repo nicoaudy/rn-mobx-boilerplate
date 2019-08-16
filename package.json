@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.2.4",
+    "cidro": "^0.1.5",
     "formik": "^1.5.7",
     "mobx": "^5.10.1",
     "mobx-react": "^6.1.1",
