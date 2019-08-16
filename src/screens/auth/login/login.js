@@ -1,5 +1,5 @@
 import React from "react";
-import { Block, Form, TextInput, Button } from "cidro";
+import { Block, Form, TextInput, Button, AvatarText } from "cidro";
 
 import { Formik } from "formik";
 import * as yup from "yup";
