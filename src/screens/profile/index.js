@@ -1,16 +1,25 @@
 import React from "react";
-import { View, Text } from "react-native";
+import Icon from "react-native-vector-icons/AntDesign";
+import { Block, Toolbar } from "cidro";
 
-const Profile = () => {
+const Profile = props => {
   return (
-    <View>
-      <Text>Profile Screen</Text>
-    </View>
+    <Block flex safe>
+      <Toolbar
+        left={
+          <Icon
+            name="back"
+            size={20}
+            onPress={() => props.navigation.goBack()}
+          />
+        }
+      />
+    </Block>
   );
 };
 
 Profile.navigationOptions = {
-  title: "Profile"
+  header: null
 };
 
 export default Profile;

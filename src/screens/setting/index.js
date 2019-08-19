@@ -1,16 +1,23 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Block, Toolbar, Text, Button } from "cidro";
 
-const Setting = () => {
+const Setting = props => {
   return (
-    <View style={{ flex: 1 }}>
-      <Text>Setting screen</Text>
-    </View>
+    <Block flex safe>
+      <Toolbar left={<Text bold>Setting</Text>} />
+
+      <Block style={{ marginTop: 40, padding: 20 }}>
+        <Button
+          text="Profile Screen"
+          onPress={() => props.navigation.navigate("PROFILE")}
+        />
+      </Block>
+    </Block>
   );
 };
 
 Setting.navigationOptions = {
-  title: "Setting"
+  header: null
 };
 
 export default Setting;

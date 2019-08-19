@@ -19,7 +19,7 @@ const Login = props => {
   });
 
   return (
-    <Block flex safe>
+    <Block flex>
       <Formik
         initialValues={{ name: "", password: "" }}
         onSubmit={(values, actions) => {
@@ -71,7 +71,7 @@ const Login = props => {
             <Button
               text="LOGIN"
               size={10}
-              type="primary"
+              type="danger"
               onPress={formik.handleSubmit}
               loading={formik.isSubmitting ? true : false}
               disabled={formik.isSubmitting ? true : false}

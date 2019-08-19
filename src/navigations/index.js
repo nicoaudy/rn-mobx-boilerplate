@@ -6,7 +6,7 @@ import {
 } from "react-navigation";
 import { NavigationService } from "../services/NavigationService";
 
-import themes from "utils/theme";
+import Icon from "react-native-vector-icons/AntDesign";
 
 import SplashScreen from "../screens/splash";
 import LoginScreen from "../screens/auth/login";
@@ -55,22 +55,27 @@ const BottomTab = createBottomTabNavigator(
     HOME: {
       screen: HomeStack,
       navigationOptions: {
-        tabBarLabel: "Home"
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="home" size={24} style={{ color: tintColor }} />
+        )
       }
     },
     SETTING: {
       screen: SettingStack,
       navigationOptions: {
-        tabBarLabel: "Setting"
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="setting" size={24} style={{ color: tintColor }} />
+        )
       }
     }
   },
   {
     tabBarOptions: {
-      activeTintColor: themes.color.COLOR_WHITE,
-      inactiveTintColor: themes.color.COLOR_GREY,
+      showLabel: false,
+      // activeTintColor: themes.color.COLOR_WHITE,
+      // inactiveTintColor: themes.color.COLOR_GREY,
       style: {
-        backgroundColor: themes.color.COLOR_PRIMARY
+        // backgroundColor: themes.color.COLOR_PRIMARY
       }
     }
   }

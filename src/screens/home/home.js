@@ -1,20 +1,22 @@
 import React from "react";
-import { Block, Toolbar, Text, AvatarText } from "cidro";
+import Icon from "react-native-vector-icons/AntDesign";
+import { Block, Toolbar, Text } from "cidro";
 
 const Home = props => {
   return (
-    <Block flex safe style={{ backgroundColor: "white" }}>
+    <Block flex safe>
       <Toolbar
-        right={<Text onPress={() => props.authStore.logout()}>Logout</Text>}
+        left={<Text bold>My App</Text>}
+        right={
+          <Icon
+            name="logout"
+            size={18}
+            onPress={() => props.authStore.logout()}
+          />
+        }
       />
       <Block flex center middle>
         <Text>Hi, Welcome back {props.authStore.user.name}</Text>
-        <AvatarText
-          circle
-          backgroundColor="papayawhip"
-          textColor="palevioletred"
-          title={(props.authStore && props.authStore.user.name) || "NA"}
-        />
       </Block>
     </Block>
   );

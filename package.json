@@ -8,13 +8,14 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.2.4",
-    "cidro": "^0.1.5",
+    "cidro": "^0.1.6",
     "formik": "^1.5.7",
     "mobx": "^5.10.1",
     "mobx-react": "^6.1.1",
     "mobx-remotedev": "^0.3.6",
     "react": "16.8.3",
     "react-native": "0.59.9",
+    "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^2.18.3",
     "yup": "^0.27.0"
   },
